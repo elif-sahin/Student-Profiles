@@ -1,0 +1,15 @@
+@import "../variables.scss";
+
+.profile-list-wrapper{
+    width: 60%;
+    min-width: 600px;
+    height: 80%;
+    overflow-y: auto;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: $white;
+    box-shadow: 2px 2px 2px 2px $dark-grey;
+}

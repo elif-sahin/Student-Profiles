@@ -14,8 +14,6 @@ export const ProfileListContainer = () => {
 
 
     return (
-        <div>
-            <ProfileList profiles={studentInfoList} />
-        </div>
+        <ProfileList profiles={studentInfoList} />
     );
 }

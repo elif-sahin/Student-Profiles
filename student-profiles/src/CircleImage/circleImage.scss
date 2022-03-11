@@ -1,0 +1,12 @@
+@import "../variables.scss";
+
+.image-wrapper{
+    display: flex;
+    align-items: center;
+    img{
+        width: 130px;
+        height: 130px;
+        border-radius: 65px;
+        border: 1px solid $border-color
+    } 
+}
