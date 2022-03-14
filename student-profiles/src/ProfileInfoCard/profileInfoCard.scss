@@ -5,7 +5,8 @@
     min-height: 160px;
     background-color: $white;
     border-bottom: 1px solid $border-color;
-    padding: 8px 8px 8px 20px;
+    padding: 16px 8px 8px 20px;
+
     .card-left{
         display: flex;
         width: 140px;
@@ -15,13 +16,19 @@
         flex-direction: column;
         flex: 1;
         margin-left: 20px;
-        align-self: center;
+        //align-self: center;
 
-        .card-header{
-            font-size: 30px;
-            font-weight: bold;
-            text-align: start;
-            margin-bottom: 10px;
+        .header-wrapper{
+            display: flex;
+            justify-content: space-between;
+        
+            .card-header{
+                display: flex;
+                font-size: 30px;
+                font-weight: bold;
+                text-align: start;
+                margin-bottom: 10px;
+            }
         }
 
         .card-info{
@@ -29,4 +36,15 @@
             margin-left: 20px;
         }
     }
+    
+
+    .card-expand{
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 16px;
+        align-items: start;
+        margin-left: 20px;
+    }
+    
 }
