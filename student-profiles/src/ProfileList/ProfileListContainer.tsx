@@ -7,8 +7,9 @@ export const ProfileListContainer = () => {
     const [studentInfoList, setStudentInfoList] = React.useState<IStudentInfo[]>([]);
 
     React.useEffect(() => {
-        fetchStudentInfo().then(items =>
+        fetchStudentInfo().then(items => {
             setStudentInfoList(items.students)
+        }
         );
     }, []);
 

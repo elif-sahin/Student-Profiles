@@ -2,9 +2,14 @@ import { ChangeEvent } from "react";
 import { IStudentInfo } from "../ProfileList/Api";
 import "./searchBar.scss";
 
+export enum SearchType {
+    NAME, TAG
+}
 interface ISearchBarProps {
     onChange: (filteredItems: IStudentInfo[]) => void;
-    items: IStudentInfo[]
+    items: IStudentInfo[];
+    searchType: SearchType
+    placeholder: string
 }
 /**
  * Search component can filter items according to their title and description
@@ -15,12 +20,25 @@ interface ISearchBarProps {
  */
 export const SearchBar = (props: ISearchBarProps) => {
 
-    const filterItems = (value: string): IStudentInfo[] =>
-        props.items.filter(
-            (item) =>
-                item.firstName.toLowerCase().trim().includes(value) ||
-                item.lastName.toLowerCase().trim().includes(value)
-        );
+    const filterItems = (value: string): IStudentInfo[] => {
+        if (value === "") {
+            return props.items;
+        }
+        if (props.searchType === SearchType.NAME) {
+            return props.items.filter(
+                (item) =>
+                    item.firstName.toLowerCase().trim().includes(value) ||
+                    item.lastName.toLowerCase().trim().includes(value)
+            );
+        }
+        else if (props.searchType === SearchType.TAG) {
+            return props.items.filter(
+                (item) => item.tags && item.tags.find((tag) => tag.toLowerCase().includes(value))
+            );
+        }
+        return props.items;
+    }
+
 
     const onSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value.toLowerCase().trim();
@@ -32,8 +50,8 @@ export const SearchBar = (props: ISearchBarProps) => {
     return (
         <div className="search">
             <input
-                className="search-input"
-                placeholder="Search"
+                className="app-input"
+                placeholder={props.placeholder}
                 onChange={onSearchInputChange}
             ></input>
         </div>

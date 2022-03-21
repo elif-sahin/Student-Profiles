@@ -1,3 +1,4 @@
+@import "./variables.scss";
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,4 +19,24 @@ html, #root, body{
   width: 100%;
   overflow-y: hidden;
   font-family: 'Raleway', sans-serif;
+}
+
+.app-input{
+  width: 200px;
+  background-color:transparent;
+  border: unset;
+  color: $dark-grey;
+  outline:unset;
+  height: 30px;
+  font-size: 16px;
+  width: 100%;
+  border-bottom: 1px solid $dark-grey;
+
+  &::placeholder{
+    color: $dark-grey;
+  }
+
+  &:focus{
+    border-bottom: 2px solid purple;            
+  }
 }

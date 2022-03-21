@@ -8,6 +8,7 @@ export interface IStudentInfo {
     email: string;
     pic: string;
     skill: string;
+    tags: string[];
 }
 
 export const fetchStudentInfo = async () => {

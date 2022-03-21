@@ -1,0 +1,13 @@
+@import "../variables.scss";
+
+.tag-wrapper{
+    display: flex;
+    background-color: $grey;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    height: 40px;
+    padding: 0 6px 0 6px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}

@@ -1,17 +1,8 @@
 @import "../variables.scss";
 
-.search-input{
-    width: 200px;
-    background-color:transparent;
-    border: unset;
-    color: $dark-grey;
-    outline:unset;
-    border-radius: 3px;
-    font-weight: 550;
-    height: 30px;
-    padding-left: 30px;
-  
-    &::placeholder{
-      color: $dark-grey;
-    }
-  }
+.search{
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 8px;
+}
